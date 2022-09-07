@@ -4,8 +4,8 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 #include <systemc.h>
-#include "Bubble.h"
-#include "Reader.h"
+#include <Bubble.h>
+#include <Reader.h>
 #include "DataRAM.h"
 
 #define RAMSIZE 0x400
@@ -23,22 +23,17 @@ int sc_main(int arg_count, char **arg_value)
 	// Variables
 	int sim_units = 2; //SC_NS 
 	
-	// Instanciation des composants
-	/*
-	
-	À compléter
-	
-	*/
+	// Components
+	Bubble iBubble("Bubble");
+	Reader iReader("Reader");
+	DataRAM iDataRAM( "DataRAM", "chiffre.hex", RAMSIZE, false );
 
 	
-	// Connexion des ports
-	/*
-	
-	À compléter
-	
-	*/
+	// Connections
+	iReader.dataPortRAM(iDataRAM);
+	iBubble.readPort(iReader);
 
-	// Démarrage de l'application
+	// D�marrage de l'application
 	if (!m_bError)
 	{
 		cout << "Demarrage de la simulation." << endl;
