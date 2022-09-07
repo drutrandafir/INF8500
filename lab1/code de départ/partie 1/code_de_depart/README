@@ -1,0 +1,12 @@
+Ouvrir un terminal dans un des dossiers (UTF, AT, CT)
+
+Compiler:
+- taper la commande: make
+
+Exécuter:
+- taper la commande: make run
+
+Nettoyer:
+- taper la commande: make clean
+
+N'oubliez pas de nettoyer régulièrement le projet avec make clean (1ere chose à faire quand quelque chose ne marche pas)

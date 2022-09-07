@@ -1,0 +1,49 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+//	Bubble.h
+//
+///////////////////////////////////////////////////////////////////////////////
+#ifndef _BUBBLE_H_
+#define _BUBBLE_H_
+
+#include <systemc.h>
+#include <stdio.h>
+#include "InterfaceRead.h"
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//	Class Bubble
+//
+///////////////////////////////////////////////////////////////////////////////
+class Bubble : public sc_module
+{
+	public: 
+		// Ports    
+		/*
+	
+		À compléter
+		
+		*/
+	
+		// Constructor
+		Bubble( sc_module_name zName );
+		
+		// Destructor
+		~Bubble();
+		
+	private:
+		// Process SystemC
+		SC_HAS_PROCESS(Bubble);
+		
+		void thread(void);
+
+		// Variables
+		/*
+	
+		À compléter
+		
+		*/
+};
+
+#endif
