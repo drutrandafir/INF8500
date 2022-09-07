@@ -1,0 +1,14 @@
+﻿  assert.c
+  Bubble.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  DataRAM.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  main.cpp
+  Unknown compiler version - please run the configure tests and report the results
+C:\INF8500\INF8500\lab1\code de départ\partie 1\code_de_depart\AT\Reader.h(11,10): fatal error C1083: Cannot open include file: 'InterfaceRead.h': No such file or directory
+  RAM.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  Reader.cpp
+  Unknown compiler version - please run the configure tests and report the results
+C:\INF8500\INF8500\lab1\code de départ\partie 1\code_de_depart\AT\Reader.h(11,10): fatal error C1083: Cannot open include file: 'InterfaceRead.h': No such file or directory
+  Generating Code...

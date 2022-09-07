@@ -8,7 +8,7 @@
 
 #include <systemc.h>
 #include "LMBIF.h"
-#include <InterfaceRead.h>
+#include "InterfaceRead.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 //
