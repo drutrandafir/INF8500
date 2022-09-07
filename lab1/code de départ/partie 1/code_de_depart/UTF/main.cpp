@@ -4,8 +4,8 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 #include <systemc.h>
-#include "Bubble.h"
-#include "Reader.h"
+#include <Bubble.h>
+#include <Reader.h>
 #include "DataRAM.h"
 
 #define RAMSIZE 0x400

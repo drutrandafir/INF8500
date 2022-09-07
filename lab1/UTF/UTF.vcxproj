@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\INF8500\systemc-2.3.3\src;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\INF8500\systemc-2.3.3\msvc10\SystemC\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\INF8500\INF8500\systemc-2.3.3\src;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\INF8500\INF8500\systemc-2.3.3\msvc10\SystemC\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

@@ -10,4 +10,4 @@
   Reader.cpp
   Unknown compiler version - please run the configure tests and report the results
   Generating Code...
-C:\INF8500\lab1\code de départ\partie 1\code_de_depart\UTF\Reader.cpp(39): error C4716: 'Reader::Read': must return a value
+C:\INF8500\INF8500\lab1\code de départ\partie 1\code_de_depart\UTF\Reader.cpp(39): error C4716: 'Reader::Read': must return a value

@@ -1,0 +1,2 @@
+C:\INF8500\INF8500\lab1\AT\Debug\AT.exe
+C:\INF8500\INF8500\lab1\AT\Debug\AT.pdb
