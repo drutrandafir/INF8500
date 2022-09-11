@@ -1,23 +1,23 @@
-﻿  assert.c
-  Bubble.cpp
+﻿  main.cpp
   Unknown compiler version - please run the configure tests and report the results
-  DataRAM.cpp
-  Unknown compiler version - please run the configure tests and report the results
-  main.cpp
-  Unknown compiler version - please run the configure tests and report the results
-  RAM.cpp
-  Unknown compiler version - please run the configure tests and report the results
-  Reader.cpp
-  Unknown compiler version - please run the configure tests and report the results
-  Generating Code...
+systemc.lib(scfx_utils.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(scfx_utils.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(scfx_rep.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(scfx_rep.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(scfx_pow10.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(scfx_pow10.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(scfx_mant.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(scfx_mant.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_wait.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_wait.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_ver.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_ver.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_value_base.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_value_base.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_utils_ids.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_utils_ids.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_unsigned.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_unsigned.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_uint_base.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_uint_base.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_trace.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_trace.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_time.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_time.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_thread_process.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_thread_process.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_stop_here.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_stop_here.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_spawn_options.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_spawn_options.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_simcontext.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_simcontext.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_signed.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_signed.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_signal_ports.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_signal_ports.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_signal.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_signal.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_sensitive.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_sensitive.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_reset.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_reset.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
@@ -30,21 +30,33 @@ systemc.lib(sc_port.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found
 systemc.lib(sc_phase_callback_registry.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_phase_callback_registry.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_object_manager.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_object_manager.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_object.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_object.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_nbutils.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_nbutils.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_nbexterns.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_nbexterns.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_name_gen.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_name_gen.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_module_registry.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_module_registry.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_module_name.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_module_name.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_module.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_module.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_method_process.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_method_process.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_mempool.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_mempool.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_lv_base.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_lv_base.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_logic.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_logic.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_list.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_list.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_interface.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_interface.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_int_mask.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_int_mask.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_int_base.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_int_base.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_hash.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_hash.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_fxval.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_fxval.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_fxtype_params.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_fxtype_params.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_fxnum.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_fxnum.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_fxdefs.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_fxdefs.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_fxcast_switch.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_fxcast_switch.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_export.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_export.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_except.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_except.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_event_finder.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_event_finder.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_event.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_event.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_cthread_process.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_cthread_process.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_cor_fiber.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_cor_fiber.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_clock.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_clock.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
+systemc.lib(sc_bv_base.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_bv_base.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
 systemc.lib(sc_attribute.obj) : warning LNK4099: PDB 'SystemC-core.pdb' was not found with 'systemc.lib(sc_attribute.obj)' or at 'C:\INF8500\INF8500\lab1\AT\Debug\SystemC-core.pdb'; linking object as if no debug info
   AT.vcxproj -> C:\INF8500\INF8500\lab1\AT\Debug\AT.exe

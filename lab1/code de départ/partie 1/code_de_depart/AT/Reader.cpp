@@ -18,6 +18,7 @@ Reader::Reader(sc_module_name zName)
 	À compléter
 	
 	*/
+	SC_THREAD(Read);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -27,6 +28,7 @@ Reader::Reader(sc_module_name zName)
 ///////////////////////////////////////////////////////////////////////////////
 Reader::~Reader()
 {
+	sc_stop();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -34,16 +36,32 @@ Reader::~Reader()
 //	read
 //
 ///////////////////////////////////////////////////////////////////////////////
-unsigned int Reader::Read(unsigned int uiAddr)
+void Reader::Read(void)
 {
+	unsigned int addr = 0;
+	unsigned int value = 0;
 
 	while(1) {
-
 		/*
 		
 		À compléter
 		
 		*/
+		do {
+			wait(clk->posedge_event());
+		} while (!request.read());
+
+		 addr = address.read();
+
+		 value = dataPortRAM->Read(addr);
+
+		 data.write(value);
+
+		 ack.write(true);
+
+		 wait(clk->posedge_event());
+
+		 ack.write(false);
 
 	}
 

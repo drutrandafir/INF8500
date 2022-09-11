@@ -18,7 +18,7 @@ class InterfaceRead : public virtual sc_interface
 	public:
 
 		// Méthode
-		virtual unsigned int Read(unsigned int uiOffset)	= 0;
+		virtual void Read(void)	= 0;
 
 };
 
