@@ -17,24 +17,32 @@
 ///////////////////////////////////////////////////////////////////////////////
 class Reader : public sc_module, public InterfaceRead
 {
-	public:
-		// Ports
-		/*
-	
-		À compléter
-		
-		*/
-		
-		// Constructor
-		Reader( sc_module_name zName );
+public:
+	// Ports
+	/*
 
-		// Destructor
-		~Reader();
+	À compléter
 
-	private:
-	
+	*/
+	sc_port<LMBIF> dataPortRAM;
+	sc_in_clk clk;
+	sc_in<unsigned int> address;
+	sc_out<unsigned int> data;
+	sc_in<bool> request;
+	sc_out<bool> ack;
+
+	// Constructor
+	Reader(sc_module_name zName);
+
+	// Destructor
+	~Reader();
+
+private:
+	// Process SystemC
+	SC_HAS_PROCESS(Reader);
+
 	// Read - InterfaceRead
-	virtual unsigned int Read(unsigned int uiAddr);
+ void Read(void);
 };
 
 #endif
