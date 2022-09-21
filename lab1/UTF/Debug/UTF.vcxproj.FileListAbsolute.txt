@@ -1,2 +1,0 @@
-C:\INF8500\INF8500\lab1\UTF\Debug\UTF.exe
-C:\INF8500\INF8500\lab1\UTF\Debug\UTF.pdb

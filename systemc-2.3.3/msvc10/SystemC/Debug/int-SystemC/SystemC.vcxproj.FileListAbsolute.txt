@@ -1,2 +1,0 @@
-C:\INF8500\systemc-2.3.3\msvc10\SystemC\Debug\int-SystemC\SystemC.pdb
-C:\INF8500\systemc-2.3.3\msvc10\SystemC\Debug\SystemC.pdb

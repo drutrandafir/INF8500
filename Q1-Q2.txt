@@ -1,0 +1,13 @@
+Q1: Quel est le lien entre DataRAM et RAM?
+
+DataRAM est une classe enfant de RAM. Elle défini plus spécifiquement les méthodes d'écriture en mémoire 
+et de fin de simulation, toutes deux nécessaires pour l'exécution de notre application. La classe RAM défini
+alors le format que ses classes enfants (telles que DataRAM) doivent suivre, mais permet à ces dernières de
+modifier leur comportement pour mieux répondre aux besoins de leur application.
+
+Q2: Justifier le (ou les) rôles de lecteur? Pourquoi ne pas avoir connecté directement Bubble à DataRAM?
+
+Autre que de simplement être une division des responsabilités, la classe Lecteur permet de créer une interface
+entre la logique de l'application et la mémoire. Cette interface permet alors d'établir une logique de communication
+telle que celle que nous avons développée, et offre alors une plus grande flexibilité dans la manière que nous 
+souhaitons que cette communication s'effectue.
