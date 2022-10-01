@@ -143,7 +143,7 @@ void CoProcessor::thread(void)
 				CoProcessor_Ready_OutPort.write(false);
 
 			case 0x2004:
-				CoProcessor_Data_OutPort.write(len(ptrData[itemCnt]));
+				CoProcessor_Data_OutPort.write(ptrData[itemCnt]);
 				CoProcessor_Ready_OutPort.write(true);
 
 				wait(CoProcessor_Enable_InPort.default_event());
