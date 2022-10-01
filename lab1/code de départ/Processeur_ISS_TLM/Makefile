@@ -1,5 +1,5 @@
-PROJETINC	=	'/usr/local/systemc/include'
-PROJETLIB	=	'/usr/local/systemc/lib-linux64'
+PROJETINC	=	'/home/arvana/INF8500/lab1/systemc/include'
+PROJETLIB	=	'/home/arvana/INF8500/lab1/systemc/lib'
 
 SRC_DIR := src
 OBJ_DIR := obj

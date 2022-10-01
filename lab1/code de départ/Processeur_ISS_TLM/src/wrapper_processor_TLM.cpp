@@ -79,12 +79,12 @@ void wrapper_processor_TLM::thread()
 			*/
 		    Wrapper_Ready_OutPort.write(false);
 
-			unsigned int *ptrData;
+			unsigned int *ptrData = (unsigned int*) malloc(sizeof(unsigned int));
 			ulDestinationAddress = Wrapper_Address_InPort.read();
 
-			busLT_read(ulDestinationAddress, ptrData, sizeof(unsigned int))
+			busLT_read(ulDestinationAddress, ptrData, sizeof(ptrData));
 
-			Wrapper_Data_OutPort.write(ptrData);
+			Wrapper_Data_OutPort.write(*ptrData);
 			
 		}
 	}

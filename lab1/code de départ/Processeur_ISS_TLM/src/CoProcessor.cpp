@@ -48,11 +48,11 @@ void CoProcessor::thread(void)
 	/*
 		À compléter
 	*/
-	reg[0].write(0x0000);
-	reg[2].write(0x0000);
 	int itemCnt = 0;
+	unsigned int dataLength = 0;
+	unsigned int ulAddress = 0;
 	unsigned int* ptrData;
-
+	unsigned int* outData = (unsigned int*) malloc(sizeof(unsigned int));
 	// Boucle infinie
 	while(1)
 	{
@@ -62,13 +62,11 @@ void CoProcessor::thread(void)
 			À compléter
 		*/
 		wait(CoProcessor_RW_OutPort.default_event());
-		bool isRead = CoProcessor_RW_OutPort.read();
 
 		// On s'assure qu'une donnée est valide (enable)
 		/*
 			À compléter
 		*/
-		wait(CoProcessor_Enable_InPort.default_event());
 		if(CoProcessor_Enable_InPort.read() == false) return;
 
 		//Lecture adresse
@@ -77,7 +75,7 @@ void CoProcessor::thread(void)
 		*/			
 		ulAddress = CoProcessor_Data_InPort.read();
 
-		switch(ulAddress):
+		switch(ulAddress) {
 			// Write (du point de vue du processeur)
 			/*
 				À compléter. Selon l'adresse qui vient du processeur:
@@ -87,34 +85,37 @@ void CoProcessor::thread(void)
 					- Ne pas oublier d'utiliser les bons registres
 			*/
 			case 0x2000:
-				reg[2].write(0x0000);
-				CoProcessor_Ready_OutPort.write(true);
-				wait(CoProcessor_Enable_InPort.default_event());
+				{
+					reg[2] = (0x0000);
+					CoProcessor_Ready_OutPort.write(true);
+					wait(CoProcessor_Enable_InPort.default_event());
 
-				unsigned int dataLength = CoProcessor_Data_InPort.read();
-				reg[0].write(dataLength);
-				ptrData = new unsigned int(dataLength);
-				itemCnt = dataLength;
+					dataLength = CoProcessor_Data_InPort.read();
+					reg[0] = (dataLength);
+					ptrData = new unsigned int(dataLength);
 
-				CoProcessor_Enable_OutPort.write(false);
-				break;
+					CoProcessor_Ready_OutPort.write(false);
+					break;
+				}
 
 			case 0x2001:
+				{
+					CoProcessor_Ready_OutPort.write(true);
+					wait(CoProcessor_Enable_InPort.default_event());
 
-				CoProcessor_Ready_OutPort.write(true);
-				wait(CoProcessor_Enable_InPort.default_event());
+					unsigned int item = CoProcessor_Data_InPort.read();
+					ptrData[itemCnt] = item;
+					itemCnt++;
+					
+					CoProcessor_Ready_OutPort.write(false);
 
-				unsigned int item = CoProcessor_Data_InPort.read();
-				ptrData[itemCnt - 1] = item;
-				
-				CoProcessor_Enable_OutPort.write(false);
-				itemCnt--;
-
-				if(itemCnt == 0){
-					reg[2].write(0x0001);
-					bubbleSort(ptrData, reg[0].read());
+					if(itemCnt >= reg[0]){
+						reg[2].write(0x0001);
+						bubbleSort(ptrData, reg[0]);
+						itemCnt = 0;
+					}
+					break;
 				}
-				break;
 
 		
 			// Read (du point de vue du processeur)
@@ -125,32 +126,46 @@ void CoProcessor::thread(void)
 					- Lecture des élément triés
 			*/
 			case 0x2002:
-				CoProcessor_Data_OutPort.write(reg[2].read());
-				CoProcessor_Ready_OutPort.write(true);
+				{
+					outData[0] = reg[2];
+					CoProcessor_Data_OutPort.write(outData[0]);
+					CoProcessor_Ready_OutPort.write(true);
 
-				wait(CoProcessor_Enable_InPort.default_event());
-				if(CoProcessor_Enable_InPort.read() == true) return;
+					wait(CoProcessor_Enable_InPort.default_event());
 
-				CoProcessor_Ready_OutPort.write(false);
+					CoProcessor_Ready_OutPort.write(false);
+					break;
+				}
 
 			case 0x2003:
-				CoProcessor_Data_OutPort.write(len(ptrData));
-				CoProcessor_Ready_OutPort.write(true);
+				{
+					CoProcessor_Data_OutPort.write(dataLength);
+					CoProcessor_Ready_OutPort.write(true);
 
-				wait(CoProcessor_Enable_InPort.default_event());
-				if(CoProcessor_Enable_InPort.read() == true) return;
-				
-				CoProcessor_Ready_OutPort.write(false);
+					wait(CoProcessor_Enable_InPort.default_event());
+					if(CoProcessor_Enable_InPort.read() == true) return;
+					
+					CoProcessor_Ready_OutPort.write(false);
+					break;
+				}
 
 			case 0x2004:
-				CoProcessor_Data_OutPort.write(ptrData[itemCnt]);
-				CoProcessor_Ready_OutPort.write(true);
+				{
+					CoProcessor_Data_OutPort.write(ptrData[itemCnt]);
+					CoProcessor_Ready_OutPort.write(true);
+					itemCnt++;
 
-				wait(CoProcessor_Enable_InPort.default_event());
-				if(CoProcessor_Enable_InPort.read() == true) return;
-				
-				CoProcessor_Ready_OutPort.write(false);
-				itemCnt++;
+					wait(CoProcessor_Enable_InPort.default_event());
+					if(CoProcessor_Enable_InPort.read() == true) return;
+					
+					CoProcessor_Ready_OutPort.write(false);
+
+					break;
+				}
+
+			default:
+				break;
+		}
 
 	}
 }
@@ -170,17 +185,17 @@ void CoProcessor::bubbleSort(unsigned int *ptr, int n_elements)
 	*/
 	bool isOrdered = false;
 
-		while (!isOrdered) {
-			wait(ClockPort.pos_edge());
-			isOrdered = true;
-			for (int itr = 0; itr < (counter - 1); itr++) {
-				if (ptr[itr] > ptr[itr + 1]) {
-					unsigned int tmp = ptr[itr];
-					ptr[itr] = ptr[itr + 1];
-					ptr[itr + 1] = tmp;
-					isOrdered = false;
-				}
+	while (!isOrdered) {
+		wait(ClockPort->posedge_event());
+		isOrdered = true;
+		for (int itr = 0; itr < (n_elements - 1); itr++) {
+			if (ptr[itr] > ptr[itr + 1]) {
+				unsigned int tmp = ptr[itr];
+				ptr[itr] = ptr[itr + 1];
+				ptr[itr + 1] = tmp;
+				isOrdered = false;
 			}
 		}
-		reg[2].write(0x002);
+	}
+	reg[2].write(0x002);
 }

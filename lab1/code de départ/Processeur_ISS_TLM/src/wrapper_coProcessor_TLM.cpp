@@ -70,7 +70,7 @@ void wrapper_coProcessor_TLM::b_transport( transaction_type& trans, sc_time& del
 ///////////////////////////////////////////////////////////////////////////////
 void wrapper_coProcessor_TLM::busLT_slave_read(sc_dt::uint64 add, unsigned char* ptrData, unsigned int len)
 {
-	unsigned long data ;
+	unsigned long data;
 	
 	// On récupère l'adresse
 	Wrapper_Data_OutPort.write( (int)add );
@@ -85,9 +85,8 @@ void wrapper_coProcessor_TLM::busLT_slave_read(sc_dt::uint64 add, unsigned char*
 	
 	// On indique que la donnée est prête
 	Wrapper_Enable_OutPort.write( false );
-	
 	data = Wrapper_Data_InPort.read();
-	
+
 	memcpy(ptrData, &data, len);
 }
 
@@ -101,7 +100,7 @@ void wrapper_coProcessor_TLM::busLT_slave_write(sc_dt::uint64 add, unsigned char
 {
 	unsigned data ;
 	memcpy(&data, ptrData, len);
-	
+
 	// On récupère la donnée
 	Wrapper_Data_OutPort.write( (int)add );
 	
