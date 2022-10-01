@@ -53,6 +53,7 @@ void CoProcessor::thread(void)
 	unsigned int ulAddress = 0;
 	unsigned int* ptrData;
 	unsigned int* outData = (unsigned int*) malloc(sizeof(unsigned int));
+
 	// Boucle infinie
 	while(1)
 	{
@@ -86,10 +87,12 @@ void CoProcessor::thread(void)
 			*/
 			case 0x2000:
 				{
+					// Prêt pour les données
 					reg[2] = (0x0000);
 					CoProcessor_Ready_OutPort.write(true);
 					wait(CoProcessor_Enable_InPort.default_event());
 
+					// Lire la taille des données
 					dataLength = CoProcessor_Data_InPort.read();
 					reg[0] = (dataLength);
 					ptrData = new unsigned int(dataLength);
@@ -100,15 +103,19 @@ void CoProcessor::thread(void)
 
 			case 0x2001:
 				{
+					// Prêt pour les données
 					CoProcessor_Ready_OutPort.write(true);
 					wait(CoProcessor_Enable_InPort.default_event());
 
+					// Sauvegarde des données, incrémentation du compteur
 					unsigned int item = CoProcessor_Data_InPort.read();
 					ptrData[itemCnt] = item;
 					itemCnt++;
 					
 					CoProcessor_Ready_OutPort.write(false);
 
+					/* Si le compteur atteint la valeur reçue de la taille des données,
+					   on débute le triage */
 					if(itemCnt >= reg[0]){
 						reg[2].write(0x0001);
 						bubbleSort(ptrData, reg[0]);
@@ -126,7 +133,8 @@ void CoProcessor::thread(void)
 					- Lecture des élément triés
 			*/
 			case 0x2002:
-				{
+				{	
+					// Écriture de l'état
 					outData[0] = reg[2];
 					CoProcessor_Data_OutPort.write(outData[0]);
 					CoProcessor_Ready_OutPort.write(true);
@@ -139,6 +147,7 @@ void CoProcessor::thread(void)
 
 			case 0x2003:
 				{
+					// Écriture de la taille du tableau
 					CoProcessor_Data_OutPort.write(dataLength);
 					CoProcessor_Ready_OutPort.write(true);
 
@@ -151,6 +160,7 @@ void CoProcessor::thread(void)
 
 			case 0x2004:
 				{
+					// Écriture d'un élément du tableau à un index incrémenté à chaque appel
 					CoProcessor_Data_OutPort.write(ptrData[itemCnt]);
 					CoProcessor_Ready_OutPort.write(true);
 					itemCnt++;
@@ -186,7 +196,7 @@ void CoProcessor::bubbleSort(unsigned int *ptr, int n_elements)
 	bool isOrdered = false;
 
 	while (!isOrdered) {
-		wait(ClockPort->posedge_event());
+		wait();
 		isOrdered = true;
 		for (int itr = 0; itr < (n_elements - 1); itr++) {
 			if (ptr[itr] > ptr[itr + 1]) {
@@ -197,5 +207,6 @@ void CoProcessor::bubbleSort(unsigned int *ptr, int n_elements)
 			}
 		}
 	}
-	reg[2].write(0x002);
+
+	reg[2] = (0x002);
 }
